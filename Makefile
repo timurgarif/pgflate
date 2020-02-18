@@ -1,7 +1,7 @@
 MODULE_big = flate
 EXTENSION = flate
 OBJS = flate.o
-DATA = flate.sql
+DATA = flate--1.0.1.sql
 
 SHLIB_LINK += -lz
 
