@@ -110,7 +110,7 @@ Datum flate_deflate(PG_FUNCTION_ARGS)
             out_len += n;
 
             out = repalloc(out, out_len + VARHDRSZ);
-            memcpy(VARDATA(out) + out_pos, buf, n);
+            memcpy((void*)(out) + out_pos, buf, n);
 
             out_pos += n;
         }
@@ -187,7 +187,7 @@ Datum flate_inflate(PG_FUNCTION_ARGS)
             out_len += n;
 
             out = repalloc(out, out_len + VARHDRSZ);
-            memcpy(VARDATA(out) + out_pos, buf, n);
+            memcpy((void*)(out) + out_pos, buf, n);
 
             out_pos += n;
         }
